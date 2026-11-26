@@ -1,35 +1,35 @@
 <div align="center">
 
-# FreeLLMAPI
+# Dinon8n
 
 **10.1 billion tokens per month.  87 free LLM providers. 1,313 free model endpoints. One OpenAI-compatible endpoint.**
 
 Aggregate free tiers from dozens of providers, plus custom OpenAI-compatible chat, embedding, image, and audio endpoints, behind a single `/v1` API. Keys are stored encrypted. A router picks the best available model for each request, falls over to the next provider when one is rate-limited, and tracks per-key usage so you stay under every free-tier cap.
 
-[![CI](https://github.com/tashfeenahmed/freellmapi/actions/workflows/ci.yml/badge.svg)](https://github.com/tashfeenahmed/freellmapi/actions/workflows/ci.yml)
-[![GitHub stars](https://img.shields.io/github/stars/tashfeenahmed/freellmapi?style=flat&logo=github&color=yellow)](https://github.com/tashfeenahmed/freellmapi/stargazers)
+[![CI](https://github.com/motya-adil-dev/dinon8n/actions/workflows/ci.yml/badge.svg)](https://github.com/motya-adil-dev/dinon8n/actions/workflows/ci.yml)
+[![GitHub stars](https://img.shields.io/github/stars/motya-adil-dev/dinon8n?style=flat&logo=github&color=yellow)](https://github.com/motya-adil-dev/dinon8n/stargazers)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
-[![Docker image](https://img.shields.io/badge/ghcr.io-freellmapi-2496ED?logo=docker&logoColor=white)](https://github.com/tashfeenahmed/freellmapi/pkgs/container/freellmapi)
-[![Ask DeepWiki](https://img.shields.io/badge/DeepWiki-Ask-blue)](https://deepwiki.com/tashfeenahmed/freellmapi)
+[![Docker image](https://img.shields.io/badge/ghcr.io-dinon8n-2496ED?logo=docker&logoColor=white)](https://github.com/motya-adil-dev/dinon8n/pkgs/container/dinon8n)
+[![Ask DeepWiki](https://img.shields.io/badge/DeepWiki-Ask-blue)](https://deepwiki.com/motya-adil-dev/dinon8n)
 
-**[freellmapi.co](https://freellmapi.co/?utm_source=github&utm_medium=readme&utm_campaign=repository&utm_content=readme_top)** · browse the full catalog: 736 model families, 1,313 free endpoints
+**[dinon8n.co](https://dinon8n.co/?utm_source=github&utm_medium=readme&utm_campaign=repository&utm_content=readme_top)** · browse the full catalog: 736 model families, 1,313 free endpoints
 
 **English** · [Türkçe](README.tr.md) · [简体中文](README.zh-cn.md) · [Русский](README.ru.md) · [O'zbekcha](README.uz.md) · [한국어](README.ko.md) · [日本語](README.ja.md)
 
 <p align="center">
-  <a href="https://github.com/tashfeenahmed/freellmapi/releases/latest"><img src="repo-assets/badges/macos.svg" height="48" alt="Download for macOS"></a>
+  <a href="https://github.com/motya-adil-dev/dinon8n/releases/latest"><img src="repo-assets/badges/macos.svg" height="48" alt="Download for macOS"></a>
   <a href="https://apps.microsoft.com/detail/9PBN6G8K2B7F"><img src="repo-assets/badges/microsoft-store.svg" height="48" alt="Get it from Microsoft Store"></a>
   <a href="docs/en/install/01-install.md#docker-compose"><img src="repo-assets/badges/docker.svg" height="48" alt="Self-host with Docker"></a>
-  <a href="https://play.google.com/store/apps/details?id=co.freellmapi.app"><img src="repo-assets/badges/play-store.svg" height="48" alt="Get it on Google Play"></a>
+  <a href="https://play.google.com/store/apps/details?id=co.dinon8n.app"><img src="repo-assets/badges/play-store.svg" height="48" alt="Get it on Google Play"></a>
   <a href="https://apps.apple.com/app/id6804648934"><img src="repo-assets/badges/app-store.svg" height="48" alt="Download on the App Store"></a>
 </p>
 
-![FreeLLMAPI dashboard — Models page with the monthly token budget](repo-assets/github-hero.png)
+![Dinon8n dashboard — Models page with the monthly token budget](repo-assets/github-hero.png)
 
 
 Your router updates its own model catalog from a signed feed: new free models, quota changes, and compatibility fixes land without a `git pull`. Free installs get the monthly snapshot, so a model reaches them 30 days after it joins the live feed; premium routers get it the same day.
-**[Go live at freellmapi.co](https://freellmapi.co/?utm_source=github&utm_medium=readme&utm_campaign=premium&utm_content=readme_top#pricing)** ($19/yr, cancel anytime).
+**[Go live at dinon8n.co](https://dinon8n.co/?utm_source=github&utm_medium=readme&utm_campaign=premium&utm_content=readme_top#pricing)** ($19/yr, cancel anytime).
 
 </div>
 
@@ -61,9 +61,9 @@ Your router updates its own model catalog from a signed feed: new free models, q
 
 Every serious AI lab now offers a free tier, a few million tokens a month, a few thousand requests a day. On its own each tier is a toy. Stacked together, they add up to roughly **10.1 billion tokens per month** of working inference capacity, across **736 model families / 1,313 provider endpoints** from small-and-fast to reasonably capable.
 
-The problem is that stacking them by hand is painful: eighty-seven different SDKs, eighty-seven different rate limits, eighty-seven places a request can fail. FreeLLMAPI collapses that into one OpenAI-compatible endpoint. Point any OpenAI client library at your local server, and it routes transparently across whichever providers you've added keys for.
+The problem is that stacking them by hand is painful: eighty-seven different SDKs, eighty-seven different rate limits, eighty-seven places a request can fail. Dinon8n collapses that into one OpenAI-compatible endpoint. Point any OpenAI client library at your local server, and it routes transparently across whichever providers you've added keys for.
 
-And the free-tier landscape shifts weekly: providers launch models, retire them, and change quotas without notice. FreeLLMAPI tracks all of that for you. The router pulls a signed model catalog from [freellmapi.co](https://freellmapi.co) on its own, so your install keeps up without a `git pull`. See [Premium (live catalog)](#premium-live-catalog) for how fast it keeps up.
+And the free-tier landscape shifts weekly: providers launch models, retire them, and change quotas without notice. Dinon8n tracks all of that for you. The router pulls a signed model catalog from [dinon8n.co](https://dinon8n.co) on its own, so your install keeps up without a `git pull`. See [Premium (live catalog)](#premium-live-catalog) for how fast it keeps up.
 
 ![The free tier, stacked — ~10.1B tokens of free inference per month across 87 providers](repo-assets/free-tier.png)
 
@@ -99,7 +99,7 @@ And the free-tier landscape shifts weekly: providers launch models, retire them,
 
 Plus a **custom** provider — point chat, embedding, image, or audio models at any OpenAI-compatible endpoint (llama.cpp, LM Studio, vLLM, a local Ollama, or a remote gateway) from the Keys page.
 
-The full, always-current list lives at **[freellmapi.co/models](https://freellmapi.co/models.html)** with per-model rate limits, context windows, and free-token budgets.
+The full, always-current list lives at **[dinon8n.co/models](https://dinon8n.co/models.html)** with per-model rate limits, context windows, and free-token budgets.
 
 ## Compatible CLIs & coding agents
 
@@ -126,9 +126,8 @@ The full, always-current list lives at **[freellmapi.co/models](https://freellma
 Most agents configure themselves with one command that reads your live catalog, backs up the existing config and merges into it:
 
 ```bash
-npx freellmapi setup-claude --url http://localhost:3001 --api-key <unified-key>
+npx dinon8n setup-claude --url http://localhost:3001 --api-key <unified-key>
 ```
-
 **[All supported agents and their setup commands →](docs/en/clients/02-supported-agents.md)** · [Per-tool recipes, MCP server and URL tokens →](docs/en/clients/01-agent-clients.md)
 
 ## How it compares
